@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # User-specific setup
+mkdir -p ~/.maid
 LOG_FILE=~/.maid/maid.log
 touch $LOG_FILE
 

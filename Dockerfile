@@ -13,17 +13,17 @@ RUN apk update && \
     curl \
     ruby \
     ruby-dev \
-    # ca-certificates \
+    ca-certificates \
     python \
     wget \
     gcc \
     make \
-    libc-dev 
-    # mesa-gl \
-    # imagemagick \
-    # qt5-qtbase-x11 \
-    # xdg-utils \
-    # xz
+    libc-dev \
+    mesa-gl \
+    imagemagick \
+    qt5-qtbase-x11 \
+    xdg-utils \
+    xz
 
 # Install Maid
 # The stupid rdoc dependency package tries to call itself upon installing, will always fail on first install... Disabling doc generation

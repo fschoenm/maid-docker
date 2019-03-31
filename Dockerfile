@@ -45,8 +45,12 @@ WORKDIR /etc/maid/
 ADD maid/ /etc/maid/
 RUN chmod 755 *.sh
 
-# First-time Calibre install
+# Create log directory and grant rights to all users
+RUN mkdir -m a+rwx /.maid
+
+# First-time Calibre install and grant rights
 RUN ./install_calibre.sh
+RUN chmod -R a+rwx $CALIBRE_HOME/calibre
 
 # Bootstrap
 CMD ./run.sh

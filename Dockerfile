@@ -47,6 +47,7 @@ RUN chmod 755 *.sh
 
 # Create log directory and grant rights to all users
 RUN mkdir -m a+rwx /.maid
+RUN mkdir -m a+rwx /.local
 
 # First-time Calibre install and grant rights
 RUN ./install_calibre.sh

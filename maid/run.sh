@@ -7,14 +7,6 @@ else
   ./install_calibre.sh
 fi
 
-# User-specific setup
-mkdir -p ~/.maid
-LOG_FILE=~/.maid/maid.log
-touch $LOG_FILE
-
-# Push Maid logs to stdout
-tail -f $LOG_FILE &
-
 # Run crons
 echo Installing jobs from $JOBS_FILE:
 cat $JOBS_FILE

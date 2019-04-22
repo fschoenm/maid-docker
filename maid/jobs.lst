@@ -1,7 +1,4 @@
 # Check https://github.com/aptible/supercronic for more examples
-# Run every 2 minutes
-*/2 * * * * maid clean -f -r /etc/maid/rules.rb
-
 # Run every 5 seconds
 */5 * * * * * * echo "Hello World"
 

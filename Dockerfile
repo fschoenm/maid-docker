@@ -25,9 +25,8 @@ RUN apk update && \
     xdg-utils \
     xz
 
-# Install Maid
-# The stupid rdoc dependency package tries to call itself upon installing, will always fail on first install... Disabling doc generation
-RUN gem install rdoc json rake maid --no-document
+# Install ruby gems
+RUN gem install escape fileutils --no-document
 
 # Install Supercronic
 ENV SUPERCRONIC_URL=https://github.com/aptible/supercronic/releases/download/v0.1.8/supercronic-linux-amd64 \
@@ -44,10 +43,6 @@ RUN curl -fsSLO "$SUPERCRONIC_URL" \
 WORKDIR /etc/maid/
 ADD maid/ /etc/maid/
 RUN chmod 755 *.sh
-
-# Create log directory and grant rights to all users
-RUN mkdir -m a+rwx /.maid
-RUN mkdir -m a+rwx /.local
 
 # First-time Calibre install and grant rights
 RUN ./install_calibre.sh

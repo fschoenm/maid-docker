@@ -2,6 +2,7 @@
 FROM frolvlad/alpine-glibc
 
 ENV CALIBRE_HOME=/
+ENV CALIBRE_CONFIG_DIRECTORY=/tmp
 ENV UPDATE_CALIBRE=False
 ENV JOBS_FILE=jobs.lst
 
